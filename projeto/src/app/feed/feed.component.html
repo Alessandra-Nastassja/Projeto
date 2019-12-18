@@ -1,0 +1,17 @@
+<div class="feed">
+    <div class="row pr-0 pl-0 ml-0 mr-0">
+        <div class="col-3 mt-5" *ngFor="let produto of comidas">
+            <div class="card" style="width: 100%">
+                <div class="card-body">
+                    <a class="card-title" [innerText]="produto.description"></a>
+                    <p class="card-text">
+                        Porção de <span [innerText]="produto.base_qty"></span>
+                        <span [innerText]="produto.base_unit"></span>
+                    </p>
+                    <hr>
+                    <a class="btn btn-info btn-sm text-white" data-target="#produtoModal" id="{{ produto.id }}" (click)="getInfoProduto($event)">Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
