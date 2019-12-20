@@ -17,4 +17,10 @@ export class FeedService {
     return this.http.get(this.urlCors + "https://taco-food-api.herokuapp.com/api/v1/food")
       .map(res => res.json()); 
   }
+
+  // Carrega informação mais detalhada do produto da API
+  getInfoFood(idProduto){
+    return this.http.get(this.urlCors + "https://taco-food-api.herokuapp.com/api/v1/food/" + idProduto)
+    .map(res => res.json());
+  }
 }

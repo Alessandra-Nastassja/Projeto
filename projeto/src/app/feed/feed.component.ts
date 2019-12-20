@@ -9,21 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
+  infoComida = []
   comidas = []
+  idProduto: [];
 
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
-    this.getFood()
+    this.getFood();
   }
 
   getFood(){
     this.feedService.getFood().subscribe(
       success =>{
-        this.comidas = success
-
-        console.log(this.comidas);
-        
+        this.comidas = success       
       }
     )
   }

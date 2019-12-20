@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { FeedComponent } from './feed/feed.component';
+import { ModalComponent } from './utils/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
