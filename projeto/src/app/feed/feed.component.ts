@@ -11,7 +11,7 @@ export class FeedComponent implements OnInit {
 
   infoComida = []
   comidas = []
-  idProduto: [];
+  idProduto: number;
 
   constructor(private feedService: FeedService) { }
 
@@ -27,4 +27,17 @@ export class FeedComponent implements OnInit {
     )
   }
 
+  getInfoFood(_idProduto){
+    this.idProduto = _idProduto.target.id;
+
+    this.feedService.getInfoFood(this.idProduto).subscribe(
+      success => {
+        this.infoComida = success
+
+        console.log(this.infoComida);
+        
+      }
+    )
+  }
+  
 }
