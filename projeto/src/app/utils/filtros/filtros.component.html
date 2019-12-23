@@ -1,0 +1,7 @@
+<!-- Filtro de categorias -->
+<ul class="list-group list-group-flush border-right">
+    <li class="form-check list-group-item border-0" *ngFor="let categoria of categorias">
+        <input class="form-check-input" type="checkbox" value="" id="{{ categoria.id }}" (click)="getIdProduto($event)">
+        <label class="form-check-label" for="{{ categoria.id }}" [innerText]="categoria.category"></label>
+    </li>
+</ul>
