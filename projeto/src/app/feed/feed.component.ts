@@ -1,5 +1,5 @@
 import { FeedService } from "./feed.service";
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-feed',
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class FeedComponent implements OnInit {
 
   infoComida = []
-  comidas = []
+  @Input() comidas = []
   idProduto: [];
 
   constructor(private feedService: FeedService) { }
@@ -22,7 +22,23 @@ export class FeedComponent implements OnInit {
   getFood(){
     this.feedService.getFood().subscribe(
       success =>{
+
         this.comidas = success       
+
+        console.log(this.comidas);
+      }
+    )
+  }
+
+  getInfoFood(_idProduto) {
+    this.idProduto = _idProduto.target.id;
+
+    this.feedService.getInfoFood(this.idProduto).subscribe(
+      success => {
+        this.infoComida = success
+
+        // console.warn(this.infoComida);
+
       }
     )
   }
