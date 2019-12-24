@@ -20,6 +20,7 @@ export class FiltrosService {
     .map(res => res.json()); 
   }
 
+  // Carrega a nova lista de produtos por categoria
   getFilterCategories(idCategoria){
     return this.http.get(this.urlCors + "https://taco-food-api.herokuapp.com/api/v1/category/"+ idCategoria + "/food")
     .map(res => res.json());

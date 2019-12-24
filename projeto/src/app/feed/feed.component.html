@@ -43,6 +43,9 @@
     </div>
 </div>
 
+<!-- Card -->
+<app-card></app-card>
+
 <!--Feed de comidas -->
 <div class="feed">
     <h1>Lista de alimentos </h1>
@@ -56,9 +59,9 @@
                         <span [innerText]="produto.base_unit"></span>
                     </p>
                     <hr>
-                    <button type="button" class="btn btn-info btn-sm text-white" data-toggle="modal"
+                    <button type="button" class="btn btn-info btn-sm btn-block text-white" data-toggle="modal"
                         data-target="#produtoModal" id="{{ produto.id }}" (click)="getInfoFood($event)">
-                        Detalhes
+                        Ver detalhes
                     </button>
                 </div>
             </div>
