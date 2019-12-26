@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 
 import { FeedComponent } from './feed/feed.component';
+import { FiltrosComponent } from './utils/filtros/filtros.component';
+import { CardComponent } from './utils/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
+    FiltrosComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
