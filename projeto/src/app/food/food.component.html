@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content" *ngFor="let item of infoComida">
             <div class="modal-header">
-                <h5 class="modal-title pr-2" id="exampleModalLabel" [innerText]="item.description"></h5> 
+                <h5 class="modal-title pr-2" id="exampleModalLabel" [innerText]="item.description"></h5>
                 <p>
                     (<span [innerText]="item.base_qty"></span>
                     <span [innerText]="item.base_unit"></span>)
@@ -44,11 +44,10 @@
 </div>
 
 <!-- Card -->
-<app-card></app-card>
+<!-- <app-card></app-card> -->
 
-<!--Feed de comidas -->
-<div class="feed">
-    <h1>Lista de alimentos </h1>
+<!--Food de comidas -->
+<div class="food" [ngClass]="isLoading? 'loading':''">
     <div class="row pr-0 pl-0 ml-0 mr-0">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-5" *ngFor="let produto of comidas">
             <div class="card" style="width: 100%; height: 100%">

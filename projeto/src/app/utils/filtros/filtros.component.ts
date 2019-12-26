@@ -1,5 +1,7 @@
 import { FiltrosService } from "./filtros.service";
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import "rxjs/add/operator/finally";
 
 @Component({
   selector: 'app-filtros',
@@ -9,35 +11,38 @@ import { Component, OnInit} from '@angular/core';
 })
 export class FiltrosComponent implements OnInit {
 
-  comidas = []
-  categorias = []
-  idCategoria: number
+  comidas = [];
+  categorias = [];
+  idCategoria: number;
+  isLoading = true;
 
   constructor(private filtrosService: FiltrosService) {
-    
+
   }
 
   ngOnInit() {
     this.getCategories()
   }
 
-  getCategories(){
-    this.filtrosService.getCategory().subscribe(
-      success => {
-        this.categorias = success
-
-        // console.warn(this.categorias);
-      }
-    )
+  getCategories() {
+    setTimeout(() => {
+      this.filtrosService.getCategory()
+      .finally(() => this.isLoading = false)
+      .subscribe(
+        success => {
+          this.categorias = success
+        }
+      )
+    }, 500);
   }
 
-  getIdProduto(event){
+  getIdProduto(event) {
     this.idCategoria = event.target.id
-    
+
     this.getFilterCategory(this.idCategoria)
   }
 
-  getFilterCategory(event){
+  getFilterCategory(event) {
     this.filtrosService.getFilterCategories(event).subscribe(
       success => {
         this.comidas = success

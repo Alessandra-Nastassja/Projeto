@@ -6,7 +6,7 @@ import "rxjs/add/operator/map";
 @Injectable({
   providedIn: 'root'
 })
-export class FeedService {
+export class FoodService {
 
   urlCors = 'https://cors-anywhere.herokuapp.com/';
 
