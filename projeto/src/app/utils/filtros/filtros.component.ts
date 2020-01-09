@@ -31,9 +31,10 @@ export class FiltrosComponent implements OnInit {
       .subscribe(
         success => {
           this.categorias = success
+          console.log(this.categorias);
         }
       )
-    }, 500);
+    }, 1000);
   }
 
   getIdProduto(event) {

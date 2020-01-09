@@ -42,8 +42,6 @@ export class FoodComponent implements OnInit {
       success => {
         this.infoComida = success
 
-        // console.warn(this.infoComida);
-
       }
     )
   }

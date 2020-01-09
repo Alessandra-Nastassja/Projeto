@@ -1,15 +1,10 @@
-<div class="container-fluid mt-5 mb-5">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <app-breadcrumb></app-breadcrumb>
+      <app-menu></app-menu>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2">
-      <app-filtros #filtros></app-filtros>
-    </div>
-    <div class="col-md-10">
-      <app-food [comidas]="filtros.comidas"></app-food>
-    </div>
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </div>
