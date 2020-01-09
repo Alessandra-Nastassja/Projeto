@@ -32,7 +32,7 @@ export class FoodComponent implements OnInit {
             this.comidas = success
           }
         )
-    }, 1000);
+    }, 500);
   }
 
   getInfoFood(_idProduto) {
