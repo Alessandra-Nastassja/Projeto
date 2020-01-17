@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from "@angular/http";
 
 import "rxjs/add/operator/map";
@@ -7,6 +7,8 @@ import "rxjs/add/operator/map";
   providedIn: 'root'
 })
 export class FoodService {
+
+  emitirComidaCriada = new EventEmitter();
 
   urlCors = 'https://cors-anywhere.herokuapp.com/';
 
@@ -20,6 +22,12 @@ export class FoodService {
 
   // Carrega informação mais detalhada do produto da API
   getInfoFood(idProduto){
+    
+    // this.emitirComidaCriada.emit(idProduto)
+
+    // console.log(idProduto);
+    
+    
     return this.http.get(this.urlCors + "https://taco-food-api.herokuapp.com/api/v1/food/" + idProduto)
     .map(res => res.json());
   }

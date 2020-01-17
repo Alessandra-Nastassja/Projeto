@@ -35,6 +35,7 @@ import { HomeComponent } from './home/home.component';
     RouterModule.forRoot(routs)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }

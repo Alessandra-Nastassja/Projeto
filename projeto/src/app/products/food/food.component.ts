@@ -12,11 +12,11 @@ import 'rxjs/add/operator/finally';
 export class FoodComponent implements OnInit {
 
   @Input() comidas = [];
-  infoComida = [];
   idProduto: [];
+  @Input() infoComida = [];
   isLoading = true;
 
-  constructor(private foodService: FoodService) { }
+  constructor(public foodService: FoodService) { }
 
   ngOnInit() {
     this.getFood();
@@ -28,20 +28,20 @@ export class FoodComponent implements OnInit {
         .finally(() => this.isLoading = false)
         .subscribe(
           success => {
-
             this.comidas = success
           }
         )
     }, 500);
   }
 
-  getInfoFood(_idProduto) {
-    this.idProduto = _idProduto.target.id;
-
+  getInfoFood(_event) {
+    console.warn(_event);
+    
+    this.idProduto = _event.target.id;
     this.foodService.getInfoFood(this.idProduto).subscribe(
       success => {
         this.infoComida = success
-
+        console.warn(this.infoComida);
       }
     )
   }

@@ -1,46 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="produtoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" *ngFor="let item of infoComida">
-            <div class="modal-header">
-                <h5 class="modal-title pr-2" id="exampleModalLabel" [innerText]="item.description"></h5>
-                <p>
-                    (<span [innerText]="item.base_qty"></span>
-                    <span [innerText]="item.base_unit"></span>)
-                </p>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Quantidade por porção *</p>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Carboidratos
-                        <div class="badge badge-info badge-pill">
-                            <span [innerText]="item.attributes.carbohydrate.qty | number:'1.2-2'"></span>
-                            <span [innerText]="item.attributes.carbohydrate.unit"></span>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Proteinas
-                        <div class="badge badge-info badge-pill">
-                            <span [innerText]="item.attributes.protein.qty | number:'1.2-2'"></span>
-                            <span [innerText]="item.attributes.protein.unit"></span>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Gorduras
-                        <div class="badge badge-info badge-pill">
-                            <span [innerText]="item.attributes.lipid.qty | number:'1.2-2'"></span>
-                            <span [innerText]="item.attributes.lipid.unit"></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <app-modal-food [infoComida]="infoComida"></app-modal-food>
 </div>
 
 <!--Food de comidas -->

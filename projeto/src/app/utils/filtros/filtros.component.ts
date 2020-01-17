@@ -31,7 +31,6 @@ export class FiltrosComponent implements OnInit {
       .subscribe(
         success => {
           this.categorias = success
-          console.log(this.categorias);
         }
       )
     }, 1000);
@@ -47,8 +46,6 @@ export class FiltrosComponent implements OnInit {
     this.filtrosService.getFilterCategories(event).subscribe(
       success => {
         this.comidas = success
-
-        console.warn(this.comidas);
       }
     )
   }
